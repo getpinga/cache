@@ -1,9 +1,9 @@
 <?php
 
-namespace Utopia\Tests;
+namespace Pinga\Tests;
 
-use Utopia\Cache\Adapter\None;
-use Utopia\Cache\Cache;
+use Pinga\Cache\Adapter\None;
+use Pinga\Cache\Cache;
 
 class NoneTest extends Base
 {
