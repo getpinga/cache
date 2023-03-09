@@ -1,9 +1,9 @@
 <?php
 
-namespace Utopia\Tests;
+namespace Pinga\Tests;
 
-use Utopia\Cache\Adapter\Swoole;
-use Utopia\Cache\Cache;
+use Pinga\Cache\Adapter\Swoole;
+use Pinga\Cache\Cache;
 
 class SwooleTest extends Base
 {
