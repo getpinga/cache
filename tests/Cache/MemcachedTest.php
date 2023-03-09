@@ -1,10 +1,10 @@
 <?php
 
-namespace Utopia\Tests;
+namespace Pinga\Tests;
 
 use Memcached as Memcached;
-use Utopia\Cache\Adapter\Memcached as MemcachedAdapter;
-use Utopia\Cache\Cache;
+use Pinga\Cache\Adapter\Memcached as MemcachedAdapter;
+use Pinga\Cache\Cache;
 
 class MemcachedTest extends Base
 {
