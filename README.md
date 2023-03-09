@@ -2,19 +2,11 @@
 
 **Based on wonderful [utopia-cache](https://github.com/utopia-php/cache) and [scrawler-labs/swoole-cache](https://github.com/scrawler-labs/swoole-cache)**
 
-[![Build Status](https://travis-ci.org/utopia-php/cache.svg?branch=master)](https://travis-ci.com/utopia-php/cache)
-![Total Downloads](https://img.shields.io/packagist/dt/utopia-php/cache.svg)
-[![Discord](https://img.shields.io/discord/564160730845151244?label=discord)](https://appwrite.io/discord)
-
-Utopia framework cache library is simple and lite library for managing application cache storing, loading and purging. This library is aiming to be as simple and easy to learn and use. This library is maintained by the [Appwrite team](https://appwrite.io).
-
-Although this library is part of the [Utopia Framework](https://github.com/utopia-php/framework) project it is dependency free and can be used as standalone with any other PHP project or framework.
-
 ## Getting Started
 
 Install using composer:
 ```bash
-composer require utopia-php/cache
+composer require pinga/cache
 ```
 
 **File System Adapter**
