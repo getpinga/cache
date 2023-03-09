@@ -1,10 +1,10 @@
 <?php
 
-namespace Utopia\Tests;
+namespace Pinga\Tests;
 
 use Redis as Redis;
-use Utopia\Cache\Adapter\Redis as RedisAdapter;
-use Utopia\Cache\Cache;
+use Pinga\Cache\Adapter\Redis as RedisAdapter;
+use Pinga\Cache\Cache;
 
 class RedisTest extends Base
 {
