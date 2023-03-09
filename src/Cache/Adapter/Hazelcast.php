@@ -1,9 +1,9 @@
 <?php
 
-namespace Utopia\Cache\Adapter;
+namespace Pinga\Cache\Adapter;
 
 use Memcached as Client;
-use Utopia\Cache\Adapter;
+use Pinga\Cache\Adapter;
 
 class Hazelcast implements Adapter
 {
