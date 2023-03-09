@@ -1,9 +1,9 @@
 <?php
 
-namespace Utopia\Tests;
+namespace Pinga\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Utopia\Cache\Cache;
+use Pinga\Cache\Cache;
 
 abstract class Base extends TestCase
 {
