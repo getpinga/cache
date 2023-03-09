@@ -1,9 +1,9 @@
 <?php
 
-namespace Utopia\Tests;
+namespace Pinga\Tests;
 
-use Utopia\Cache\Adapter\Filesystem;
-use Utopia\Cache\Cache;
+use Pinga\Cache\Adapter\Filesystem;
+use Pinga\Cache\Cache;
 
 class FilesystemTest extends Base
 {
