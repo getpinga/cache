@@ -1,10 +1,10 @@
 <?php
 
-namespace Utopia\Cache\Adapter;
+namespace Pinga\Cache\Adapter;
 
 use Exception;
 use Redis as Client;
-use Utopia\Cache\Adapter;
+use Pinga\Cache\Adapter;
 
 class Redis implements Adapter
 {
