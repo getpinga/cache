@@ -1,5 +1,5 @@
 {
-    "name": "utopia-php/cache",
+    "name": "pinga/cache",
     "description": "A simple cache library to manage application cache storing, loading and purging",
     "type": "library",
     "keywords": ["php","framework", "upf", "utopia", "cache"],
