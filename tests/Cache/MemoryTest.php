@@ -1,9 +1,9 @@
 <?php
 
-namespace Utopia\Tests;
+namespace Pinga\Tests;
 
-use Utopia\Cache\Adapter\Memory;
-use Utopia\Cache\Cache;
+use Pinga\Cache\Adapter\Memory;
+use Pinga\Cache\Cache;
 
 class MemoryTest extends Base
 {
