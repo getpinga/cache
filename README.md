@@ -1,4 +1,6 @@
-# Utopia Cache
+# Pinga Cache
+
+**Based on wonderful [utopia-cache](https://github.com/utopia-php/cache) and [scrawler-labs/swoole-cache](https://github.com/scrawler-labs/swoole-cache)**
 
 [![Build Status](https://travis-ci.org/utopia-php/cache.svg?branch=master)](https://travis-ci.com/utopia-php/cache)
 ![Total Downloads](https://img.shields.io/packagist/dt/utopia-php/cache.svg)
