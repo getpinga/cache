@@ -1,12 +1,12 @@
 <?php
 
-namespace Utopia\Tests;
+namespace Pinga\Tests;
 
 use Redis as Redis;
 use Throwable;
-use Utopia\Cache\Adapter\Redis as RedisAdapter;
-use Utopia\Cache\Adapter\Sharding;
-use Utopia\Cache\Cache;
+use Pinga\Cache\Adapter\Redis as RedisAdapter;
+use Pinga\Cache\Adapter\Sharding;
+use Pinga\Cache\Cache;
 
 class ShardingTest extends Base
 {
