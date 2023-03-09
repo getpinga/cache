@@ -1,8 +1,8 @@
 <?php
 
-namespace Utopia\Cache\Adapter;
+namespace Pinga\Cache\Adapter;
 
-use Utopia\Cache\Adapter;
+use Pinga\Cache\Adapter;
 use Swoole\Table;
 
 class Swoole implements Adapter
