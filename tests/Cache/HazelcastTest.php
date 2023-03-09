@@ -1,10 +1,10 @@
 <?php
 
-namespace Utopia\Tests;
+namespace Pinga\Tests;
 
 use Memcached as Memcached;
-use Utopia\Cache\Adapter\Hazelcast as HazelcastAdapter;
-use Utopia\Cache\Cache;
+use Pinga\Cache\Adapter\Hazelcast as HazelcastAdapter;
+use Pinga\Cache\Cache;
 
 class HazelcastTest extends Base
 {
