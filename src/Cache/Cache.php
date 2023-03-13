@@ -40,7 +40,7 @@ class Cache
      * @param  int  $ttl time in seconds
      * @return mixed
      */
-    public function load(string $key, int $ttl): mixed
+    public function load(string $key, int $ttl = null): mixed
     {
         $key = self::$caseSensitive ? $key : \strtolower($key);
 
