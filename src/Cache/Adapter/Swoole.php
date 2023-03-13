@@ -4,19 +4,19 @@ namespace Pinga\Cache\Adapter;
 
 use Pinga\Cache\Adapter;
 use Swoole\Table;
+use InvalidArgumentException;
 
 class Swoole implements Adapter
 {
     /**
      * @var array<string, mixed>
      */
-    public $store = [];
     protected $table;
 
     /**
      * Swoole constructor.
      */
-    public function __construct($size = 1024)
+    public function __construct(int $size = 1024)
     {
         $this->table = new \Swoole\Table($size);
         $this->table->column('key', \Swoole\Table::TYPE_STRING, 64);
@@ -25,55 +25,56 @@ class Swoole implements Adapter
     }
 
     /**
-     * @param  string  $key
-     * @return string
+     * @param string $key
+     * @param int $ttl time in seconds
+     * @return mixed
      */
-    public function load(string $key, mixed $default = null): string
+    public function load(string $key, int $ttl): mixed
     {
         $this->validateKey($key);
-        $key = $this->table->get($key, 'value');
-        
-        if ($key == null) {
-            return $default;
-        }
 
-        return $key;
+        $value = $this->table->get($key, 'value');
+
+        return $value !== false ? $value : null;
     }
 
     /**
-     * @param  string  $key
-     * @param  string|array<int|string, mixed>  $data
-     * @return bool|string|array<int|string, mixed>
-     */
-    public function save(string $key, string $value, $ttl = null): bool
-    {
-        $this->validateKey($key);
-        return $this->table->set($key, ['key'=>$key,'value'=>$value]);
-    }
-
-    /**
-     * @param  string  $key
+     * @param string $key
+     * @param string|array<int|string, mixed> $data
      * @return bool
      */
-    public function purge(string $key):bool
+    public function save(string $key, $data): bool
     {
         $this->validateKey($key);
+
+        return $this->table->set($key, ['key' => $key, 'value' => $data]);
+    }
+
+    /**
+     * @param string $key
+     * @return bool
+     */
+    public function purge(string $key): bool
+    {
+        $this->validateKey($key);
+
         return $this->table->del($key);
     }
 
     /**
      * @return bool
      */
-    public function flush() : bool
+    public function flush(): bool
     {
-        $flag = false;
-        foreach ($this->table as $k => $item) {
-            $flag = $this->table->del($k);
-            if (!$flag) {
-                return false;
+        $result = true;
+
+        foreach ($this->table as $key => $value) {
+            if (!$this->table->del($key)) {
+                $result = false;
             }
         }
-        return true;
+
+        return $result;
     }
 
     /**
@@ -83,13 +84,13 @@ class Swoole implements Adapter
     {
         return true;
     }
-	
+
     /**
      * @param mixed $key
      */
     private function validateKey($key): void
     {
-        if (!is_string($key) || $key === '' || strpbrk($key, '{}()/\@:')) {
+        if (!is_string($key) || $key === '' || preg_match('/[\{\}\(\)\/\\\@\:\;]/', $key)) {
             throw new InvalidArgumentException('Invalid key value.');
         }
     }
